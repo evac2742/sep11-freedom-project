@@ -1,13 +1,14 @@
 # Tool Learning Log
 
-## Tool: **X**
+## Tool: **Kaboom**
 
-## Project: **X**
+## Project: **Flip**
 
 ---
 
-### X/X/XX:
-* Text
+### 10/10/25:
+What I learned:
+
 
 ### X/X/XX:
 * Text
