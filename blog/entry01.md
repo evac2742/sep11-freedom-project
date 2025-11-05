@@ -26,6 +26,8 @@ Next, I plan to start coding and testing out how to connects **Kaboom** with my 
 * **Problem Solving**: I learned how to debug small issues like my sprites not loading. (Cause and effect)
 * **Independent Learning**: By tinkering and learning this tool by myself, I have learned to work independently and teaching myself.
 * **Planning/Organization**: By planning out my whole project with what topic I am going to do, and what tool I am going to use. I will then slowly build my project and make it come together.
+
+
 [Next](entry02.md)
 
 [Home](../README.md)
