@@ -34,7 +34,7 @@
                 });
 
 
-            loadSprite("brown-sugar","../images/brown-sugar.png");
+            loadSprite("brownsugar","../images/brown-sugar.png");
             loadSprite("matcha","../images/matcha.png");
             loadSprite("milktea","../images/milktea.png");
             loadSprite("mixed","../images/mixed.png");
@@ -43,10 +43,39 @@
             loadSprite("back","../images/back.jpg");
 
 
+const flavors = ["brownsugar", "matcha", "milktea", "mixed", "strawberry", "taro"];
+
+var cards = [
+    flavors[0], flavors[0],
+    flavors[1], flavors[1],
+    flavors[2], flavors[2],
+    flavors[3], flavors[3],
+    flavors[4], flavors[4],
+    flavors[5], flavors[5],
+];
+
+console.log(cards);
+
+
+
+
             add([
                 sprite("taro"),
-                pos(center()),
-                scale(0.7),
+                pos(100,100),
+                scale(1),
+                area(),
+                "card",
+                {flavor:"taro", flipped: false}
+            ])
+
+
+           add([
+                sprite("brownsugar"),
+                pos(250,100),
+                scale(1),
+                area(),
+                "card",
+                {flavor:"taro", flipped: false}
             ])
 
             </script>
