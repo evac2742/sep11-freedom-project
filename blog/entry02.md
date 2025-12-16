@@ -12,6 +12,10 @@ Things I have learned:
 
 I refered to the Kaboom.js documents for coding references and practice.
 
+### Sources
+
+
+
 ### Engineering Design Process (EDP)
 I am currently in the creating and testing phase of the engineering and design process. I have leard to build a basic structure and test game mechanics. My next steps are:
 * all cards on screen with no overlays
