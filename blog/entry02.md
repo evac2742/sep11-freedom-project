@@ -13,7 +13,9 @@ Things I have learned:
 I refered to the Kaboom.js documents for coding references and practice.
 
 ### Sources
-
+[Here](https://kaboomjs.com/#onClick)
+ is where I learned `onClick()` and I read thru the document and I tested it in the 
+[Playground](https://kaboomjs.com/play?example=sprite).
 
 
 ### Engineering Design Process (EDP)
