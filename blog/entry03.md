@@ -29,8 +29,8 @@ I am still in the **creating** and **designing process**. I'm slowing designing 
 ### Skills
 Some skills I have develop through this are:
 * **Problem solving**: I fixed the layout of my code.
-* **Organization**: Organizing systen layout
-* **Independent Learning**:
+* **Organization**: Organizing systen layout.
+* **Independent Learning**: I slowly learn about **Kaboom** independently.
 
 
 
