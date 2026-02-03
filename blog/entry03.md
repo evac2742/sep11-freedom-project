@@ -7,7 +7,7 @@ Since my last blog entry, I have been working on my **Freedom Project** slowly w
 
 What I have been working on:
 * Adjusting grid layout
-* Trying to make cards layed out evenly
+* Trying to make cards laid out evenly
 * Experimenting flipping cards without them having a match yet
 * Debugging issues if cards are uneven or unevenly spaced
 * Making sure cards don't overlap
@@ -15,7 +15,7 @@ What I have been working on:
 ### Sources
 Just like  my last blog, I continued to use **Kaboom.js documents** from the website. I also used the **playground** because I am able to experiment with the function while also learning about them.
 
-* [Kaboom Documentations](https://kaboomjs.com/)
+* [Kaboom Documentation](https://kaboomjs.com/)
 * [Kaboom Playground](https://kaboomjs.com/play?example=add)
 
 ### Engineering Design Process
@@ -29,8 +29,8 @@ I am still in the **creating** and **designing process**. I'm slowing designing 
 ### Skills
 Some skills I have develop through this are:
 * **Problem solving**: I fixed the layout of my code.
-* **Organization**: Organizing systen layout.
-* **Independent Learning**: I slowly learn about **Kaboom** independently.
+* **Organization**: Organizing system layout.
+* **Independent Learning**: I slowly learn about **Kaboom.js** independently.
 
 
 
