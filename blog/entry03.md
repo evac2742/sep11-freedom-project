@@ -31,6 +31,7 @@ Some skills I have develop through this are:
 * **Problem solving**: I fixed the layout of my code.
 * **Organization**: Organizing system layout.
 * **Independent Learning**: I slowly learn about **Kaboom.js** independently.
+* **Debugging**: Noticed that I a single comma can mess up your whole code.
 
 
 
