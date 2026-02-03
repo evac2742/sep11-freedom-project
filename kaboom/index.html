@@ -60,7 +60,7 @@ console.log(cards);
 
 
             add([
-                sprite("taro"),
+                sprite("back"),
                 pos(100,100),
                 scale(1),
                 area(),
@@ -70,14 +70,66 @@ console.log(cards);
 
 
            add([
-                sprite("brownsugar"),
-                pos(250,100),
+                sprite("back"),
+                pos(300,100),
                 scale(1),
                 area(),
                 "card",
-                {flavor:"taro", flipped: false}
+                {flavor:"brownsugar", flipped: false}
             ])
 
+
+           add([
+                sprite("back"),
+                pos(500,100),
+                scale(1),
+                area(),
+                "card",
+                {flavor:"matcha", flipped: false}
+            ])
+
+
+           add([
+                sprite("back"),
+                pos(700,100),
+                scale(1),
+                area(),
+                "card",
+                {flavor:"milktea", flipped: false}
+            ])
+
+
+           add([
+                sprite("back"),
+                pos(900,100),
+                scale(1),
+                area(),
+                "card",
+                {flavor:"mixed", flipped: false}
+            ])
+
+
+            add([
+                sprite("back"),
+                pos(1100,100),
+                scale(1),
+                area(),
+                "card",
+                {flavor:"strawberry", flipped: false}
+            ])
+
+
+
+
+            onClick("card", function(card){
+                if(card.flipped === false) {
+                    card.use(sprite(card.flavor));
+                    card.flipped = true;
+                } else {
+                    card.use(sprite("back"));
+                    card.flipped = false;
+                }
+            })
             </script>
 
 
