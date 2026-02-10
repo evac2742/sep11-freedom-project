@@ -9,12 +9,15 @@
 
 #### MVP
 
-- [ ] Task (deadline: X)
+- [ ] Complete flipping animation (deadline: 2/16)
+- [ ] Make copy of each card (deadline: 2/23)
+- [ ] Make sure they can flip (dealine: 2/25)
   - [ ] Subtask (deadline: X)
 
 #### Beyond MVP
 
-- [ ] Task
+- [ ] Background image
+- [ ] 
   - [ ] Subtask
 
 
