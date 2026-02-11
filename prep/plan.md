@@ -9,16 +9,18 @@
 
 #### MVP
 
-- [ ] Complete flipping animation (deadline: 2/16)
-- [ ] Make copy of each card (deadline: 2/23)
-- [ ] Make sure they can flip (dealine: 2/25)
-  - [ ] Subtask (deadline: X)
+- [ ] Make copy of each card (deadline: 2/16)
+- [ ] Complete flipping animation (deadline: 2/23)
+- [ ] Make sure cards can flip (deadline: 2/25)
+  - [ ] AND unflip (deadline: 2/27)
 
 #### Beyond MVP
 
 - [ ] Background image
+- [ ] flip back automatically if the two cards are wrong
+  - [ ] Maybe even a flip back animation
+- [ ] Add a reset button
 - [ ] 
-  - [ ] Subtask
 
 
 <!-- EXAMPLE
