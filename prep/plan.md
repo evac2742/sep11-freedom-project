@@ -9,10 +9,15 @@
 
 #### MVP
 
-- [ ] Make copy of each card (deadline: 2/16)
+- [X] Make copy of each card (deadline: 2/16)
 - [ ] Complete flipping animation (deadline: 2/23)
-- [ ] Make sure cards can flip (deadline: 2/25)
+- [X] Make sure cards can flip (deadline: 2/25)
   - [ ] AND unflip (deadline: 2/27)
+  - [ ] Add click eventListener (deadline: 2/27)
+- [ ] Detect when 2 cards are flipped (dealine: 3/5)
+  - [ ] Compare IDS
+- [ ] Keep matched cards up (3/7)
+- [ ] Win message when all cards are flipped(3/10)
 
 #### Beyond MVP
 
@@ -20,7 +25,8 @@
 - [ ] flip back automatically if the two cards are wrong
   - [ ] Maybe even a flip back animation
 - [ ] Add a reset button
-- [ ] 
+- [ ] Add instructions screen
+- [ ] Progress bar of cards matched
 
 
 <!-- EXAMPLE
