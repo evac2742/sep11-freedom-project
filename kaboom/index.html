@@ -1,140 +1,102 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="style.css" rel="stylesheet" type="text/css" />
-        <style>
-            /* CSS */
-
-        </style>
-
-        <title>Boba Memory Match</title>
-    </head>
-    <body>
-        <!-- HTML -->
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- <script src="script.js"></script> -->
+<script src="https://unpkg.com/kaboom@3000.0.1/dist/kaboom.js"></script>
 
+<script type="module">
 
-        <!--JS-->
+// import kaboom.js
+import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
 
+// initialize kaboom context
+kaboom();
 
+// add a piece of text at position (120, 80)
+add([
+    text("hello"),
+    pos(120, 80),
+]);
 
-            <script src="https://unpkg.com/kaboom@3000.0.1/dist/kaboom.js"></script>
+</script>
+// kaboom({
+//     width: 1200,
+//     height: 600,
+//     background: [200, 255, 255], // light background
+// });
 
-            <script>
-                kaboom({
-                    background: [0, 0, 0],
-                });
+// // Load all sprites individually
+// loadSprite("brownsugar", "images/brown-sugar.png");
+// loadSprite("matcha", "images/matcha.png");
+// loadSprite("milktea", "images/milktea.png");
+// loadSprite("mixed", "images/mixed.png");
+// loadSprite("strawberry", "images/strawberry.png");
+// loadSprite("taro", "images/taro.png");
+// loadSprite("back", "images/back.jpg");
 
+// // Wait until sprites are loaded
+// onLoad(() => {
 
-            loadSprite("brownsugar","../images/brown-sugar.png");
-            loadSprite("matcha","../images/matcha.png");
-            loadSprite("milktea","../images/milktea.png");
-            loadSprite("mixed","../images/mixed.png");
-            loadSprite("strawberry","../images/strawberry.png");
-            loadSprite("taro","../images/taro.png");
-            loadSprite("back","../images/back.jpg");
+//     // Define flavor names (no need to use ${f})
+//     const flavors = ["brownsugar", "matcha", "milktea", "mixed", "strawberry", "taro"];
 
+//     // Create a deck (2 of each flavor)
+//     let cardsArray = [];
+//     flavors.forEach(f => {
+//         cardsArray.push(f);
+//         cardsArray.push(f);
+//     });
 
-const flavors = ["brownsugar", "matcha", "milktea", "mixed", "strawberry", "taro"];
+//     // Shuffle the deck
+//     cardsArray.sort(() => Math.random() - 0.5);
 
-var cards = [
-    flavors[0], flavors[0],
-    flavors[1], flavors[1],
-    flavors[2], flavors[2],
-    flavors[3], flavors[3],
-    flavors[4], flavors[4],
-    flavors[5], flavors[5],
-];
+//     // Grid layout settings
+//     const startX = 100;
+//     const startY = 100;
+//     const gapX = 200;
+//     const gapY = 200;
+//     const cols = 6;
 
-console.log(cards);
+//     // Add all cards
+//     for (let i = 0; i < cardsArray.length; i++) {
+//         const row = Math.floor(i / cols);
+//         const col = i % cols;
 
+//         add([
+//             sprite("back"), // Default back image
+//             pos(startX + col * gapX, startY + row * gapY),
+//             scale(1),
+//             area(),
+//             "card",
+//             { flavor: cardsArray[i], flipped: false }
+//         ]);
+//     }
 
+//     // Card flip logic
+//     let flippedCards = [];
 
+//     onClick("card", (card) => {
+//         if (card.flipped) return;
 
-            add([
-                sprite("back"),
-                pos(100,100),
-                scale(1),
-                area(),
-                "card",
-                {flavor:"taro", flipped: false}
-            ])
+//         // Flip the card based on its flavor
+//         card.use(sprite(card.flavor));  // No need for `${f}`, use card.flavor directly
+//         card.flipped = true;
+//         flippedCards.push(card);
 
+//         // Check for match if two cards flipped
+//         if (flippedCards.length === 2) {
+//             const [c1, c2] = flippedCards;
 
-           add([
-                sprite("back"),
-                pos(300,100),
-                scale(1),
-                area(),
-                "card",
-                {flavor:"brownsugar", flipped: false}
-            ])
-
-
-           add([
-                sprite("back"),
-                pos(500,100),
-                scale(1),
-                area(),
-                "card",
-                {flavor:"matcha", flipped: false}
-            ])
-
-
-           add([
-                sprite("back"),
-                pos(700,100),
-                scale(1),
-                area(),
-                "card",
-                {flavor:"milktea", flipped: false}
-            ])
-
-
-           add([
-                sprite("back"),
-                pos(900,100),
-                scale(1),
-                area(),
-                "card",
-                {flavor:"mixed", flipped: false}
-            ])
-
-
-            add([
-                sprite("back"),
-                pos(1100,100),
-                scale(1),
-                area(),
-                "card",
-                {flavor:"strawberry", flipped: false}
-            ])
-
-
-
-
-            onClick("card", function(card){
-                if(card.flipped === false) {
-                    card.use(sprite(card.flavor));
-                    card.flipped = true;
-                } else {
-                    card.use(sprite("back"));
-                    card.flipped = false;
-                }
-            })
-            </script>
-
-
-
-
-
-    </body>
-</html>
+//             if (c1.flavor !== c2.flavor) {
+//                 wait(1, () => {
+//                     c1.use(sprite("back"));
+//                     c1.flipped = false;
+//                     c2.use(sprite("back"));
+//                     c2.flipped = false;
+//                     flippedCards = [];
+//                 });
+//             } else {
+//                 flippedCards = [];
+//             }
+//         }
+//     });
+// });
+// </script>
