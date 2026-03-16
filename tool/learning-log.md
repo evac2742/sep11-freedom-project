@@ -47,6 +47,22 @@
 
 ### LL8 3/8
 
+### LL9 3/16
+**What I learned**
+
+* I have learned to add a flipping animation to my cards
+* Clickable boba tiles: I used `onClick()` to make the tiles flippable
+
+**Challenges**
+
+* **Managing sprite states**: Keeping track of flipped tiles, especially if multiple tiles are clicked quickly. THis presents a challenge. I need a better system to handle multiple tile states at once.
+* **Tile matching timing**: Detecting matches immediately after a click is fine, but ensuring the game doesn’t allow matches when two tiles are flipped and destroyed at the same time is difficult.
+* **Animating tile destruction**: I need to improve the destruction animations because calling `destroy()` doesn’t give the desired visual feedback.
+
+**What I am going to try next:**
+* I am going to try to make the computer recognize when the boba tiles are a match by comparing IDs.
+* Keep matched cards up.
+
 
 
 
