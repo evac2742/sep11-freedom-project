@@ -66,8 +66,11 @@
 
 ### LL10 3/23
 **What I learned**
+* I have learned to assign IDs to each boba tiles to identify matches.
 **Challenges**
+* 
 **What I am going to try next:**
+* Fix any small bugs
 
 <!--
 * Links you used today (websites, videos, etc)
