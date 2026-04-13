@@ -1,39 +1,59 @@
+
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script src="https://unpkg.com/kaboom@3000.0.1/dist/kaboom.js"></script>
+</head>
 
+<body>
 <script>
-window.addEventListener("DOMContentLoaded", (event) => {
-    kaboom();
-     loadSprite("brownsugar", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/brown-sugar.png");
-    loadSprite("matcha", "https://github.com/evac2742/sep11-freedom-project/blob/main/images/matcha.png");
-    loadSprite("milktea", "https://github.com/evac2742/sep11-freedom-project/blob/main/images/milktea.png");
-    loadSprite("mixed", "https://github.com/evac2742/sep11-freedom-project/blob/main/images/mixed.png");
-    loadSprite("strawberry", "https://github.com/evac2742/sep11-freedom-project/blob/main/images/strawberry.png");
-    loadSprite("taro", "https://github.com/evac2742/sep11-freedom-project/blob/main/images/taro.png");
-    loadSprite("back", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/back.jpg");
+window.addEventListener("DOMContentLoaded", () => {
 
+// Initialize Kaboom
+kaboom({
+width: 800,
+height: 600,
+background: [0, 0, 0],
+});
 
-   onLoad(() => {
-                console.log("All images are loaded!");
+// Load sprites (FIXED URLs)
+loadSprite("brownsugar", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/brown-sugar.png");
+loadSprite("matcha", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/matcha.png");
+loadSprite("milktea", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/milktea.png");
+loadSprite("mixed", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/mixed.png");
+loadSprite("strawberry", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/strawberry.png");
+loadSprite("taro", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/taro.png");
+loadSprite("back", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/back.jpg");
 
-                const flavors = ["brownsugar", "matcha", "milktea", "mixed", "strawberry", "taro"];
+onLoad(() => {
+console.log("All images are loaded!");
 
-                // Duplicate each flavor
-                let cardsArray = [];
-                flavors.forEach(f => {
-                    cardsArray.push(f);
-                    cardsArray.push(f);  // Duplicate
-                });
+const flavors = ["brownsugar", "matcha", "milktea", "mixed", "strawberry", "taro"];
 
- console.log(cardsArray);  // Log the cards array flavors
-            }); // closing bracket for onLoad()
-        }); // closing bracket for window.addEventListener
+// Duplicate each flavor
+let cardsArray = [];
+flavors.forEach(f => {
+cardsArray.push(f);
+cardsArray.push(f);
+});
+
+console.log(cardsArray);
+
+// DISPLAY sprites (this was missing)
+cardsArray.forEach((flavor, index) => {
+add([
+sprite(flavor),
+pos(80 + (index % 6) * 120, 100 + Math.floor(index / 6) * 150),
+scale(0.5)
+]);
+});
+});
+
+});
 </script>
+</body>
+</html>
