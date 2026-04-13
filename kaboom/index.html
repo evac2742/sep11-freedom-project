@@ -1,15 +1,39 @@
-<script type="module">
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-// import kaboom.js
-import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-// initialize kaboom context
-kaboom();
+<script src="https://unpkg.com/kaboom@3000.0.1/dist/kaboom.js"></script>
 
-// add a piece of text at position (120, 80)
-add([
-    text("hello"),
-    pos(120, 80),
-]);
+<script>
+window.addEventListener("DOMContentLoaded", (event) => {
+    kaboom();
+     loadSprite("brownsugar", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/brown-sugar.png");
+    loadSprite("matcha", "https://github.com/evac2742/sep11-freedom-project/blob/main/images/matcha.png");
+    loadSprite("milktea", "https://github.com/evac2742/sep11-freedom-project/blob/main/images/milktea.png");
+    loadSprite("mixed", "https://github.com/evac2742/sep11-freedom-project/blob/main/images/mixed.png");
+    loadSprite("strawberry", "https://github.com/evac2742/sep11-freedom-project/blob/main/images/strawberry.png");
+    loadSprite("taro", "https://github.com/evac2742/sep11-freedom-project/blob/main/images/taro.png");
+    loadSprite("back", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/back.jpg");
 
+
+   onLoad(() => {
+                console.log("All images are loaded!");
+
+                const flavors = ["brownsugar", "matcha", "milktea", "mixed", "strawberry", "taro"];
+
+                // Duplicate each flavor
+                let cardsArray = [];
+                flavors.forEach(f => {
+                    cardsArray.push(f);
+                    cardsArray.push(f);  // Duplicate
+                });
+
+ console.log(cardsArray);  // Log the cards array flavors
+            }); // closing bracket for onLoad()
+        }); // closing bracket for window.addEventListener
 </script>
