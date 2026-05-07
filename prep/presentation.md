@@ -4,13 +4,13 @@
 How would you determine if a game was based on luck or intelligence? In a simple game, a memorization game, would you consider the chances of you getting a matched card lucky, or do you simply think you are smart enough to beat my game. Let me show you my code and we'll find out together...
 
 ## Product
-* 
+* My code
 
 ## Process
-* 
+* my code
 
 ## Conclusion
-* 
+* thanks
 
 <!-- EXAMPLE
 
