@@ -17,10 +17,14 @@ How would you determine if a game was based on luck or intelligence? In a simple
 * Break down code
 * I will show my MVP vs what I improved after
 * How kaboom helped me.
+* Specific code snippet
+ * Shuffle: Show the logic that randomizes the cards positions every time
+* Kaboom: Talk about how Kabooms handles events like onClick()
 
 ## Conclusion
-* Summarize what i built
+* Summarize what I built
 * What I learned
+ * Simple games actually require a lot of if/then logic to make the game smooth.
 * Include game link
 
 <!-- EXAMPLE
