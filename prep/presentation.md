@@ -4,13 +4,24 @@
 How would you determine if a game was based on luck or intelligence? In a simple game, a memorization game, would you consider the chances of you getting a matched card lucky, or do you simply think you are smart enough to beat my game. Let me show you my code and we'll find out together...
 
 ## Product
-* My code
+* I will show my game.
+* Demonstrate
+  * Flipping cards
+  * Matching pairs
+  * Randomized cards
+* I may add a gif or a video demonstating how my game works.
+* Keep it visual.
 
 ## Process
-* my code
+* I will explain my code through slides and what each chunk of code does.
+* Break down code
+* I will show my MVP vs what I improved after
+* How kaboom helped me.
 
 ## Conclusion
-* thanks
+* Summarize what i built
+* What I learned
+* Include game link
 
 <!-- EXAMPLE
 
