@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,90 +9,131 @@
 
 <body>
 <script>
-            window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
 
-            // Initialize Kaboom
-            kaboom({
-                width: 800,
-                height: 600,
-                background: [0, 0, 0],
-            });
+    // Initialize Kaboom
+    kaboom({
+        width: 800,
+        height: 600,
+        background: [0, 0, 0],
+    });
 
-            // Load sprites
-            loadSprite("brownsugar", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/brown-sugar.png");
-            loadSprite("matcha", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/matcha.png");
-            loadSprite("milktea", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/milktea.png");
-            loadSprite("mixed", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/mixed.png");
-            loadSprite("strawberry", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/strawberry.png");
-            loadSprite("taro", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/taro.png");
-            loadSprite("back", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/back.jpg");
+    // Load sprites
+    loadSprite("brownsugar", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/brown-sugar.png");
+    loadSprite("matcha", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/matcha.png");
+    loadSprite("milktea", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/milktea.png");
+    loadSprite("mixed", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/mixed.png");
+    loadSprite("strawberry", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/strawberry.png");
+    loadSprite("taro", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/taro.png");
+    loadSprite("back", "https://raw.githubusercontent.com/evac2742/sep11-freedom-project/main/images/back.jpg");
 
-            onLoad(() => {
-                console.log("All images are loaded!");
+    onLoad(() => {
 
-            const flavors = [
-                "brownsugar",
-                 "matcha",
-                 "milktea",
-                 "mixed",
-                 "strawberry",
-                 "taro"
-                ];
+        console.log("All images are loaded!");
 
-            // Duplicate each flavor
-            var cardsArray = [];
-            flavors.forEach(f => {
+        const flavors = [
+            "brownsugar",
+            "matcha",
+            "milktea",
+            "mixed",
+            "strawberry",
+            "taro"
+        ];
+
+        // Duplicate each flavor
+        let cardsArray = [];
+
+        flavors.forEach(f => {
             cardsArray.push(f);
             cardsArray.push(f);
-            });
-            shuffle(cardsArray);
-            console.log(cardsArray);
+        });
 
+        shuffle(cardsArray);
 
+        // Shuffle function
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const r = Math.floor(Math.random() * (i + 1));
+                [array[i], array[r]] = [array[r], array[i]];
+            }
+        }
 
-            //shuffle
-                function shuffle(array) {
-                    for (let i = array.length - 1; i > 0; i--) {
-                        const r = Math.floor(Math.random() * (i + 1));
+        // Variables for matching logic
+        let firstCard = null;
+        let secondCard = null;
+        let canClick = true;
 
-                        // swap
-                        [array[i], array[r]] = [array[r], array[i]];
-                    }
-                }
+        // Display cards
+        cardsArray.forEach((flavor, index) => {
 
-
-            // display sprites
-            cardsArray.forEach((flavor, index) => {
             const card = add([
-                sprite("back"), // show back first
+                sprite("back"),
                 pos(80 + (index % 6) * 120, 100 + Math.floor(index / 6) * 150),
                 scale(0.5),
-                area(), // for clicking
+                area(),
                 {
                     flavor: flavor,
-                    flipped: false
+                    flipped: false,
+                    matched: false,
                 }
             ]);
 
+            card.onClick(() => {
 
+                // Prevent bad clicks
+                if (
+                    !canClick ||
+                    card.flipped ||
+                    card.matched
+                ) return;
 
+                // Flip card
+                card.use(sprite(card.flavor));
+                card.flipped = true;
 
-                card.onClick(() => {
-                    if (!card.flipped) {
-                        // flip to front
-                        card.use(sprite(card.flavor));
-                        card.flipped = true;
-                    } else {
-                        // flip back
-                        card.use(sprite("back"));
-                        card.flipped = false;
+                // First card
+                if (firstCard === null) {
+                    firstCard = card;
+                }
+
+                // Second card
+                else {
+                    secondCard = card;
+                    canClick = false;
+
+                    // match
+                    if (firstCard.flavor === secondCard.flavor) {
+
+                        firstCard.matched = true;
+                        secondCard.matched = true;
+
+                        firstCard = null;
+                        secondCard = null;
+                        canClick = true;
                     }
-                })
 
+                    // no match
+                    else {
 
-                    });
-                    });
-                    });
+                        wait(1, () => {
+
+                            firstCard.use(sprite("back"));
+                            secondCard.use(sprite("back"));
+
+                            firstCard.flipped = false;
+                            secondCard.flipped = false;
+
+                            firstCard = null; //no value
+                            secondCard = null; //no value
+
+                            canClick = true;
+                        });
+                    }
+                }
+            });
+        });
+    });
+});
 </script>
 </body>
 </html>
