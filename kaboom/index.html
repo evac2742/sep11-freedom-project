@@ -48,6 +48,7 @@ window.addEventListener("DOMContentLoaded", () => {
             cardsArray.push(f);
         });
 
+        // Shuffle cards
         shuffle(cardsArray);
 
         // Shuffle function
@@ -62,6 +63,7 @@ window.addEventListener("DOMContentLoaded", () => {
         let firstCard = null;
         let secondCard = null;
         let canClick = true;
+        let matchedPairs = 0;
 
         // Display cards
         cardsArray.forEach((flavor, index) => {
@@ -98,21 +100,37 @@ window.addEventListener("DOMContentLoaded", () => {
 
                 // Second card
                 else {
+
                     secondCard = card;
                     canClick = false;
 
-                    // match
+                    // Match
                     if (firstCard.flavor === secondCard.flavor) {
 
                         firstCard.matched = true;
                         secondCard.matched = true;
+
+                        matchedPairs++;
+
+                        // Check win condition
+                        if (matchedPairs === flavors.length) {
+
+                            add([
+                                text("YOU WIN!", {
+                                    size: 50,
+                                }),
+                                pos(width() / 2, 40),
+                                anchor("center"),
+                                color(0, 255, 0),
+                            ]);
+                        }
 
                         firstCard = null;
                         secondCard = null;
                         canClick = true;
                     }
 
-                    // no match
+                    // No match
                     else {
 
                         wait(1, () => {
@@ -123,8 +141,8 @@ window.addEventListener("DOMContentLoaded", () => {
                             firstCard.flipped = false;
                             secondCard.flipped = false;
 
-                            firstCard = null; //no value
-                            secondCard = null; //no value
+                            firstCard = null;
+                            secondCard = null;
 
                             canClick = true;
                         });
